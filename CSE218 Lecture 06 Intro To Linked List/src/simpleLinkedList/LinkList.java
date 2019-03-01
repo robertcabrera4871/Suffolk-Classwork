@@ -55,7 +55,6 @@ public class LinkList {
 		newLink.setNext(first);
 		first = newLink;
 	}
-
 	public Link deleteFirst() {
 		Link temp = first;
 		first = first.getNext();
