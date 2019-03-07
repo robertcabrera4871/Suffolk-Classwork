@@ -1,14 +1,16 @@
-package generic_upperBoundConstraints;
+package lowerBoundConstraints;
 
-//extends Number CONSTRAINS t to a number and its subclasses
-public class Point<T extends Number> {
+public class Point<T> {
 	private T x;
 	private T y;
 
 	public Point(T x, T y) {
-		super();
 		this.x = x;
 		this.y = y;
+	}
+	
+	public void display(Point<? super Integer> point) {
+		System.out.println(point);
 	}
 
 	public T getX() {
@@ -27,12 +29,8 @@ public class Point<T extends Number> {
 		this.y = y;
 	}
 
-	@Override
 	public String toString() {
 		return "Point [x=" + x + ", y=" + y + "]";
 	}
-	
-	public void display(@SuppressWarnings("rawtypes") Point point) {
-		System.out.println(point);
-	}
+
 }
